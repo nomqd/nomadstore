@@ -1,0 +1,613 @@
+/* === General === */
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo img {
+  height: 100px;
+}
+
+nav {
+  flex-grow: 1;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 30px;
+  padding-top: 100;
+  margin: 100;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+}
+
+nav a.active,
+nav a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.cart-icon {
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 100px 30px 60px;
+  background-color: #000;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.new-arrivals {
+  text-align: center;
+  margin-top: 60px;
+  color: #fff;
+}
+
+.new-arrivals h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* === Filter Bar === */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: #000000;
+  border-bottom: 1px solid #333;
+}
+
+.filters select {
+  padding: 8px;
+  font-size: 14px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+/* === Product Grid === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.product-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+}
+
+.product-card p {
+  margin: 5px 0;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.product-card button:hover {
+  background: #ccc;
+}
+
+/* === Cart Popup === */
+.cart-popup {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: #111;
+  border: 1px solid #333;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  width: 300px;
+  z-index: 1000;
+}
+
+.cart-popup.hidden {
+  display: none;
+}
+
+.cart-popup h3 {
+  margin-top: 0;
+}
+
+.cart-popup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-popup li {
+  margin-bottom: 10px;
+}
+
+.cart-popup button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #fff;
+  margin-top: 40px;
+}
+/* === Hero Section === */
+.hero {
+  height: 100vh;
+  background: url('images/home-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* Optional dark overlay */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.shop-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+/* === Hero Section === */
+.hero {
+  height: 100vh;
+  background: url('images/home-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  animation: slideIn 1.2s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  animation: fadeIn 1.4s ease-out;
+}
+
+.shop-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+  animation: fadeIn 1.6s ease-out;
+}
+
+.shop-btn:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Responsive Hero === */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .shop-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+/* === About Section === */
+.about-section {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+  }
+}
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.social-icons a {
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #999;
+}
+
+/* === New Arrivals === */
+.new-arrivals {
+  padding: 50px 30px 20px;
+  background: #000000;
+  color: #fff;
+  text-align: center;
+}
+
+.new-arrivals h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.new-arrival-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* === Contact Page === */
+.contact {
+  padding: 60px 30px;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #222;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+  border-color: #fff;
+  outline: none;
+}
+
+.contact form button {
+  background: #fff;
+  color: #000;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact form button:hover {
+  background: #ccc;
+}
+
+/* Confirmation Popup */
+#confirmationPopup {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: #000;
+  color: #fff;
+  padding: 20px 30px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  z-index: 999;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 40px 20px;
+  }
+
+  .contact form {
+    padding: 20px;
+  }
+}
+
+.cart-icon {
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  transition: transform 0.2s;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+  color: #ddd;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.cart-popup {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.cart-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cart-popup h3 {
+  margin-top: 0;
+}
+
+.cart-popup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-popup li {
+  margin-bottom: 10px;
+}
+
+.cart-popup button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
