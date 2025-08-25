@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You - NOMAD</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .thank-you {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .thank-you h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .thank-you p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you">
+    <h1>🎉 Thank You for Your Order!</h1>
+    <p><strong>Name:</strong> <span id="customerName"></span></p>
+    <p><strong>Total Paid:</strong> GHS <span id="orderTotal"></span></p>
+    <p><strong>Delivery Option:</strong> <span id="deliveryOption"></span></p>
+    <p>We’ll contact you shortly. You can also reach us on <strong>+233 59 768 5872</strong>.</p>
+    <a href="index.html" style="margin-top: 20px; display: inline-block; text-decoration: underline;">Back to Home</a>
+  </div>
+
+  <script>
+    document.getElementById('customerName').textContent = localStorage.getItem('customerName') || "N/A";
+    document.getElementById('orderTotal').textContent = localStorage.getItem('orderTotal') || "0.00";
+    document.getElementById('deliveryOption').textContent = localStorage.getItem('deliveryOption') || "N/A";
+
+    // Clear cart and customer data
+    localStorage.removeItem('cartItems');
+    localStorage.removeItem('customerName');
+    localStorage.removeItem('orderTotal');
+    localStorage.removeItem('deliveryOption');
+  </script>
+</body>
+</html>
