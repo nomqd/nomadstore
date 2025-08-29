@@ -7,7 +7,74 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   <style>
+    .contact {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      margin-bottom: 30px;
+      color: #aaa;
+    }
+
+    .contact form {
+      max-width: 500px;   /* keeps form compact */
+      margin: 0 auto;     /* centers form */
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: #111;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+    }
+
+    .contact form input,
+    .contact form textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #1c1c1c;
+      color: #fff;
+      font-family: inherit;
+    }
+
+    .contact form input::placeholder,
+    .contact form textarea::placeholder {
+      color: #777;
+    }
+
+    .contact form button {
+      background: #fff;
+      color: #000;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact form button:hover {
+      background: #ccc;
+    }
+
+    #confirmationPopup {
+      display: none;
+      margin-top: 15px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+    }
+
     .social-links {
       display: flex;
       justify-content: center;
@@ -32,56 +99,55 @@
       color: #aaa;
       font-size: 14px;
     }
-
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-        <img src="images/nomad-logo4.png" alt="NOMAD Logo" />
+      <img src="images/nomad-logo4.png" alt="NOMAD Logo" />
     </div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="active" href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="contact-page">
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>Have a question or want to reach out? Fill out the form below.</p>
-        <form onsubmit="event.preventDefault(); showConfirmation(); this.reset();">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-    </section>
-      
-      <div id="confirmationPopup">Thanks for contacting us!</div>
-  </main>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you. Send us a message below.</p>
+
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="confirmationPopup">Message Sent Successfully ✅</div>
+    </form>
+  </section>
 
   <footer>
     <div class="social-links">
       <a href="https://instagram.com/nomq.d" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/nomq.d" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Twitter">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
       <a href="https://tiktok.com/nomq.d" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
-    <p>© 2025 NOMAD. All rights reserved.</p>
+    <p>&copy; 2025 NOMAD. All rights reserved.</p>
   </footer>
+
   <script>
-    function showConfirmation() {
-      const popup = document.getElementById("confirmationPopup");
-      popup.style.display = "block";
-      setTimeout(() => {
-        popup.style.display = "none";
-      }, 3000);
-    }
+    // Show confirmation popup
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("confirmationPopup").style.display = "block";
+      this.reset();
+    });
   </script>
-  
 </body>
 </html>
+
